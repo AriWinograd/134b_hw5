@@ -3,12 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Portfolio Main Page</title>
-    <link rel="Index" href="./index.html">
-    <link rel="Next" href="./experience.html">
     <style>
-        .top li{
-            display: inline;
-            margin-right: 15px;
+        .meta {
+            color:rgb(0, 255, 128)
         }
     </style>
 </head>
@@ -19,45 +16,82 @@
         <nav>
             <ol class="top">
                 <li><a href="index.html"><img src="home_icon.png" alt="Home">Home</a></li>
-                <li><a href="experience.html"><img src="briefcase_icon.png" alt="Experience">Experience</a></li>
+               <!-- <li><a href="experience.html"><img src="briefcase_icon.png" alt="Experience">Experience</a></li> -->
                 <li><a href="education.html"><img src="backpack_icon.png" alt="Education">Education</a></li>
                 <li><a href="hobbies.html"><img src="violin_icon.png" alt="Hobbies">Hobbies</a></li>
-                <li><a href="other.html"><img src="console_icon.png" alt="Misc">Other</a></li>
+               <!--  <li><a href="other.html"><img src="console_icon.png" alt="Misc">Other</a></li> -->
             </ol>
         </nav>
     </header>
     <main>
         <h2>Relevant Coursework</h2>
         <ul>
-                <li>CSE 134B
+                <li><details open>
+                    <summary> <span class="meta">134B - Web Front-End Developement</span></summary>
                     <ul type="square">
                         <li>HTML</li>
                         <li>CSS</li>
                         <li>JavaScript</li>
                     </ul>
+                </details>
                 </li>
-                <li>CSE 142/142L
+                <li><details open>
+                    <summary>CSE 142/142L - Computer Architecture</summary>
                     <ul type="square">
                         <li>C++</li>
                         <li>Benchmarking performance and architectural optimization</li>
                     </ul>
+                    </details>
                 </li>
-                <li>CSE 151A
+                <li><details open>
+                    <summary> 151A - Machine Learning</summary>
                     <ul type="square">
                         <li>Python</li>
-                        <li>Machine Learning</li>
+                        <li>ML Algorithms</li>
                     </ul>
+                    </details>
                 </li>
-                <li>CSE 110
+                <li><details open>
+                    <summary> 110 - Android Apllication Project</summary>
                     <ul type="square">
                         <li>Java</li>
                         <li>Android Studio developement</li>
                     </ul>
+                </details>
                 </li>
         </ul>
     </main>
     <footer>
-
+        <table border="1">
+            <caption>To Summarize:</caption>
+            <colgroup>
+                <col span="1" style="background-color:blueviolet">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>Data 1</th>
+                    <th>Related Event 1</th>
+                    <th>Related Event 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>A</td>
+                    <td>B</td>
+                    <td>C</td>
+                </tr>
+                <tr>
+                    <td>10.34</td>
+                    <td>8.44</td>
+                    <td>35.67</td>
+                </tr>
+                <tr>
+                    <td>12.12</td>
+                    <td>5.89</td>
+                    <td>1.00</td>
+                </tr>
+            </tbody>
+        </table>
     </footer>
 </body>
 
