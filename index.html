@@ -8,6 +8,11 @@
         <p>Thank you :)</p>
         <!--I'd use this text eventually upon form submission-->
     </template>
+    <style>
+        button{
+            color:blueviolet
+        }
+    </style>
 </head>
 
 <body>
@@ -37,7 +42,7 @@
                 </optgroup>
             </select>
             <br>
-            <code>std::cout << "Hello, World!" << std::endl;</code><br>
+            <code>std::cout &lt;&lt; "Hello, World!" &lt;&lt; std::endl;</code><br>
             <code>print("Hello, World!")</code><br>
             <code>printf(%s, "Hello, World!\n");</code><br>
             <code>System.out.println("Hello, World!");</code><br>
@@ -45,13 +50,8 @@
             <p></p>
         </div>
         <p>What other fun and wacky things are going on here?</p>
-        <p>
+        <section>
             Not to worry, I did <b>not</b> forget about the user persona. This page is temporarily my 
-            <style>
-            pre {
-                color:rgb(103, 24, 123)
-            }
-            </style>
             <pre>
             e   
                 x   
@@ -66,7 +66,7 @@
             </pre>
             page for testing out the HW3 tags I couldn't fit anywhere else. Once I get some real content in here most this stuff
             will be moved elsewhere. 
-        </p>
+        </section>
         <br>
         <canvas id="cv">Canvas Element Not Supported</canvas>
         <script>
@@ -103,12 +103,9 @@
             </fieldset>
         </form>
         <br>
-        <button><a href=education.html>To Education Page</a></button>
-        <!--TODO:
-            picture
-            source
-            svg
-        -->
+        <form action="education.html">
+            <button id="next_page">To Education Page</button>
+        </form>
     </footer>
 </body>
 
