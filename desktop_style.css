@@ -83,16 +83,12 @@ aside{
     margin-right:10%;
     justify-content: center;
     align-items:center;
-    transition: all 2s;
+    transition: transform 2s;
     gap: 25%;
 }
 
-aside audio{
-    transform: scale(2);
-}
-
 aside:hover{
-    transform: scale(1.2);
+    transform: scale(2);
 }
 
 .splatoon{
