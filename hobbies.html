@@ -2,7 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>Portfolio Hobbies Page</title>
+    <link rel="stylesheet" href="phone_style.css" media="screen and (max-width:480px)">
+    <link rel="stylesheet" href="desktop_style.css" media="screen and (min-width:481px)">
+    <style media="screen and (max-width:480px)">
+        a[href="hobbies.html"]{
+            background-color: rgb(192, 190, 190);
+        }
+    </style>
 </head>
 
 <body>
@@ -10,17 +18,30 @@
         <h1>Hobbies and Interests</h1>
         <nav>
             <ol class="top">
-                <li><a href="index.html"><img src="home_icon.png" alt="Home">Home</a></li>
-               <!-- <li><a href="experience.html"><img src="briefcase_icon.png" alt="Experience">Experience</a></li> -->
-                <li><a href="education.html"><img src="backpack_icon.png" alt="Education">Education</a></li>
-                <li><a href="hobbies.html"><img src="violin_icon.png" alt="Hobbies">Hobbies</a></li>
-                <!-- <li><a href="other.html"><img src="console_icon.png" alt="Misc">Other</a></li> -->
+                <li>
+                    <a href="index.html">
+                        <img src="assets/home_icon.png" alt="Home">
+                        <p>Home</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="education.html">
+                        <img src="assets/backpack_icon.png" alt="Education">
+                        <p>Education</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="hobbies.html">
+                        <img src="assets/violin_icon.png" alt="Hobbies">
+                        <p>Hobbies</p>
+                    </a>
+                </li>
             </ol>
         </nav>
     </header>
     <main>
         <h2>About myself</h2>
-        <section>
+        <section class="music">
             <h3>Music</h3>
                 <p>In my spare time, I greatly enjoy playing my violin. I've been playing it since
                     elementary school, and plan to keep going with it. I find that playing violin helps
@@ -28,11 +49,12 @@
                     I'm feeling stressed.
                 </p>
                 <aside>
-                    <audio controls src="katfl_fdoapm.mp3">
+                    <audio controls src="assets/katfl_fdoapm.mp3">
                         <!-- I'll record some violin audio to put here, but as a placeholder
                         enjoy some Kirby and the Forgotten Land soudntrack-->
                         Audio Element not Supported :(
                     </audio>
+                    <img src="assets/treble_icon.png" alt="Treble Cleff Icon">
                 </aside>
                 <p>
                     My Dad also plays violin and listening to his playing growing up was one of the main reasons
@@ -41,37 +63,31 @@
                 </p>
         </section>
         <hr>
-        <section>
-            <h3>Esports</h3>
-            <p>I also enjoy competing with friends in the Esports arena for the game series <i>Splatoon</i>.
-            <a href="https://en.wikipedia.org/wiki/Splatoon#" target="_blank">Splatoon</a> is a 3rd person shooter developed by Nintendo,
-            with the added mechanic that the players shoot paint at each other, and can use this paint to sneak through terrain
-            or climb walls. While seemingly simple upfront, this game has a surprising amount of depth to it.
-            </p>
-            <p>I've been playing Splatoon since the first game, and have been dedicated to pushing my favorite weapon: <br>
-            <strong>Carbon<br>
-                Roller<br>
-                Deco<br>
-            </strong>
+        <h3>Esports</h3>
+        <section class="splatoon">
+            <p id="splat_text">I also enjoy competing with friends in the Esports arena for the game series <i>Splatoon</i>.
+                <a href="https://en.wikipedia.org/wiki/Splatoon#" target="_blank">Splatoon</a> is a 3rd person shooter developed by Nintendo,
+                with the added mechanic that the players shoot paint at each other, and can use this paint to sneak through terrain
+                or climb walls. While seemingly simple upfront, this game has a surprising amount of depth to it.
+                I've been playing Splatoon since the first game, and have been dedicated to pushing my favorite weapon: <br>
+                <strong>Carbon Roller Deco</strong><br>
+                I've played for two teams so far. One with my older brother, and one with my university. I'm proud to
+                say I've accomplished quite a bit with each team.
             </p>
             <figure>
-                <picture>
-                    <source media="(min-width:5000px)" srcset="splat2_thumb.webp">
-                    <img src="carbon_deco.png" alt="The Carbon Roller">
-                </picture>
+                <img src="assets/carbon_deco.png" alt="The Carbon Roller">
                 <figcaption>The <em>Carbon Roller Deco</em>, my weapon of choice since the first game.</figcaption> 
             </figure>       
-        </section>
-        <div>
-            <p>I've got an established player profile:</p>
-            <iframe src="https://sendou.ink/u/379791764673789953" width="500" height="500"></iframe>
-        </div>
-        <br>
-        <br>
-        <p>I've played for two teams so far. One with my older brother, and one with my university. I'm proud to
-            say I've accomplished quite a bit with each team.
-        </p>
-        <video src="splat_clip.mp4" controls muted>MP4 not supported</video>
+            
+            <div id="splat_profile">
+                <p>I've got an established player profile:</p>
+                <iframe src="https://sendou.ink/u/379791764673789953"></iframe>
+            </div>
+            <div id="splat_clip">
+                <p>Here's a cool clip from my gameplay:</p>
+                <video src="assets/splat_clip.mp4" controls muted>MP4 not supported</video>
+            </div>
+    </section>
     </main>
     <footer>
 

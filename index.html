@@ -2,110 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>Portfolio Main Page</title>
-    <link rel="next" href="./education.html">
-    <template id="confirm">
-        <p>Thank you :)</p>
-        <!--I'd use this text eventually upon form submission-->
-    </template>
-    <style>
-        button{
-            color:blueviolet
+    <link rel="stylesheet" href="phone_style.css" media="screen and (max-width:480px)">
+    <link rel="stylesheet" href="desktop_style.css" media="screen and (min-width:481px)">
+    <style media="screen and (max-width:480px)">
+        a[href="index.html"]{
+            background-color: rgb(192, 190, 190);
         }
     </style>
 </head>
 
 <body>
     <header>
-        <h1>Hello!</h1>
+        <h1>Welcome!</h1>
         <nav>
             <ol class="top">
-                <li><a href="index.html"><img src="home_icon.png" alt="Home">Home</a></li>
-               <!-- <li><a href="experience.html"><img src="briefcase_icon.png" alt="Experience">Experience</a></li> -->
-                <li><a href="education.html"><img src="backpack_icon.png" alt="Education">Education</a></li>
-                <li><a href="hobbies.html"><img src="violin_icon.png" alt="Hobbies">Hobbies</a></li>
-               <!-- <li><a href="other.html"><img src="console_icon.png" alt="Misc">Other</a></li> -->
+                <li>
+                    <a href="index.html">
+                        <img src="assets/home_icon.png" alt="Home">
+                        <p>Home</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="education.html">
+                        <img src="assets/backpack_icon.png" alt="Education">
+                        <p>Education</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="hobbies.html">
+                        <img src="assets/violin_icon.png" alt="Hobbies">
+                        <p>Hobbies</p>
+                    </a>
+                </li>
             </ol>
         </nav>
     </header>
     <main>
-        <h2>Test Page</h2>
-        <div>
-            <h3>Select Some stuff</h3>
-            <select>
-                <optgroup label="Language">
-                    <option>C++</option>
-                    <option>Python</option>
-                    <option>C</option>
-                    <option>Java</option>
-                    <option>Perl</option>
-                </optgroup>
-            </select>
-            <br>
-            <code>std::cout &lt;&lt; "Hello, World!" &lt;&lt; std::endl;</code><br>
-            <code>print("Hello, World!")</code><br>
-            <code>printf(%s, "Hello, World!\n");</code><br>
-            <code>System.out.println("Hello, World!");</code><br>
-            <code>print "Hello, World!";</code><br>
-            <p></p>
-        </div>
-        <p>What other fun and wacky things are going on here?</p>
-        <section>
-            Not to worry, I did <b>not</b> forget about the user persona. This page is temporarily my 
-            <pre>
-            e   
-                x   
-                    p   
-                        i   
-                            r   
-                                e   
-                                    m   
-                                        e   
-                                            n   
-                                                t 
-            </pre>
-            page for testing out the HW3 tags I couldn't fit anywhere else. Once I get some real content in here most this stuff
-            will be moved elsewhere. 
+       <h2>Hello and welcome to my site!</h2>
+       <section>
+            <p>My name is Ari and I'm in Computer Engineering at
+                the University of California, San Diego. As you can tell,
+                I've had the opportunity to learn and explore introductory
+                level web developement during my time at UCSD. How fun! <br>
+            </p>
+            <picture>
+                <source srcset="assets/profile_resized.webp" media="(min-width:481px)">
+                <img id="small" src="assets/profile_small.webp" alt="My Profile Photo">
+            </picture>
+            <p>As far as experience goes, I've had summer internships
+                at <em>Phillips Connect Technologies</em>, during which
+                I've worked on device testing, scripting in
+                both perl and python, and working with Bluetooth to carry out
+                over-the-air device firmware updates. <br>
+            </p>
         </section>
-        <br>
-        <canvas id="cv">Canvas Element Not Supported</canvas>
-        <script>
-            //I don't know any JS yet so I'm just following an example here to make a square
-            var c = document.getElementById('cv');
-            var ctx = c.getContext('2d');
-            ctx.fillStyle='#ffff00';
-            ctx.fillRect(20, 30, 80, 80);
-        </script> 
-        <div>
-        <p>Here we go with a part of a <svg width="30" height="30"><circle cx="20" cy="20" r="20" style="background-color:black"></circle></svg>circle.</p>
-        </div>
     </main>
-    <footer id="foot">
-        <form>
-            <fieldset>
-                <legend>Review My Page</legend>
-                <label for="rating">How good was this page (1-5)?</label>
-                <input type="number" min="1" max="5" id="rating" required="required">
-                <br>
-                <label for="review">Your input is important! Is there anything this page could do better?</label><br>
-                <!--I don't know how to capture output yet-->
-                <textarea id="review"></textarea><br>
-                <label for="lang">Which of these languages is the coolest?</label>
-                <input list="Languages" id="lang">
-                <datalist id="Languages">
-                    <option value="C++"></option>
-                    <option value="Python"></option>
-                    <option value="C"></option>
-                    <option value="Java"></option>
-                    <option value="Perl"></option>
-                </datalist>
-                <input type="submit">
-            </fieldset>
-        </form>
-        <br>
-        <form action="education.html">
-            <button id="next_page">To Education Page</button>
-        </form>
+    <footer>
+    
     </footer>
 </body>
 
