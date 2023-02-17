@@ -4,7 +4,7 @@
 
 @font-face{
     font-family:"Fira Sans";
-    src: url('FiraSansCondensed-Regular.ttf') format('truetype');
+    src: url('assets/FiraSansCondensed-Regular.ttf') format('truetype');
 }
 
 nav ol{
