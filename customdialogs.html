@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Custom Dialogs</title>
+    <script type="text/javascript" src="dist/purify.js"></script>
+    <script type="module">
+        import {init} from './customdialogs.js';
+        window.addEventListener('DOMContentLoaded', init);
+    </script>
+</head>
+
+<body>
+    
+    <dialog id="alert_dia">
+        Alert Pressed!<br>
+        <button id="ok_alert" autofocus>ok</button>
+    </dialog>
+
+    <dialog id="confirm_dia">
+        Confirm? <br>
+        <button id="yes_btn" autofocus>Yes</button>
+        <button id="no_btn">No</button>
+    </dialog>
+
+    <dialog id="prompt_dia">
+        Type Some Text: <br>
+        <input id="in_field"><br>
+        <button id="enter_btn">Enter</button>
+        <button id="cancel_btn">Cancel</button>
+    </dialog>
+
+    <button id="alert_btn">Alert</button>
+
+    <button id="confirm_btn">Confirm</button>
+
+    <button id="safe_prompt_btn">Safer Prompt</button>
+
+    <hr>
+
+    <output id="btn_out" for="confirm_btn" value=""></output>
+</body>

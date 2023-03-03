@@ -1,0 +1,104 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    background-color:aquamarine;
+    padding: 5px;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+#new_post{
+    scale: 3;
+    color: blue;
+    border: dashed blue;
+    background-color: rgb(85, 234, 184);
+    margin: 10px;
+}
+
+#new_post:hover{
+    background-color:aqua
+}
+
+dialog{
+    background-color:lightblue;
+    scale: 2.5;
+    padding: 2px;
+}
+
+#dia_wrapper{
+    display:flex;
+    flex-direction:column;
+    margin: 2px;
+}
+
+form{
+    display:flex;
+    flex-direction: column;
+}
+
+div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 3ex 3ex 2.5fr 5ex;
+    grid-template-areas: 
+    "title title"
+    "time time"
+    "summary summary"
+    "edit delete";
+    margin: 5px;
+    max-width: 30ch;
+    border: double black;
+    padding: 5px;
+    justify-items:start;
+}
+
+h3{
+    grid-area: title;
+    margin: 2px;
+}
+
+time{
+    grid-area: time;
+    margin: 2px;
+}
+
+p{
+    grid-area: summary;
+}
+
+.edit_btn{
+    grid-area: edit;
+    border:solid black;
+    justify-self: stretch;
+
+}
+
+.edit_btn:hover{
+    background-color: aqua;
+}
+
+.delete_btn{
+    grid-area: delete;
+    justify-self:stretch;
+    border:solid black;
+}
+
+.delete_btn:hover{
+    background-color: red;
+}
+
+section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+

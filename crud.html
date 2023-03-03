@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>CRUD Page</title>
+    <script type="module">
+        import {init} from './blog.js';
+        window.addEventListener('DOMContentLoaded', init);
+    </script>
+     <template id="blog_template">
+        <div>
+            <h3>Title</h3>
+            <time datetime="0000-00-00T00:00">00:00</time>
+            <p>Summary of the post.</p>
+            <button class="edit_btn"></button>
+            <button class="delete_btn">Delete</button>
+        </div>
+    </template>
+</head>
+<body>
+    <dialog id="post_dia">
+        <form id="form" method="dialog">
+            <label for="title">Post Title: </label>
+            <input autofocus required type="text" id="title" name="title">
+            <br>
+            <label for="summary">Summary: </label> <br>
+            <textarea required id="summary" name="summary"></textarea>
+            <br>
+
+            <button id="enter_btn">Enter</button>
+        </form>
+        <button id="cancel_btn">Cancel</button>
+        
+    </dialog>
+    <button id="new_post">New Post</button>
+</body>

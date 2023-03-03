@@ -4,7 +4,77 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>Native Dialogs</title>
+    <script type="text/javascript" src="dist/purify.js"></script>
+    <script>
+
+        function alertBtnHandler(){
+            alert("Alert!");
+        }
+
+        function confirmBtnHandler(){
+            let out = document.getElementById('btn_out');
+            let answer = confirm("Confirm Button Press?");
+            if(answer == false){
+                out.value = 'Not Confirmed';
+            }
+            else{
+                out.value = 'Confirmed!';
+            }
+        }
+
+        let noInput = 'User didn\'t enter anything';
+
+        function promptBtnHandler(){
+            let out = document.getElementById('btn_out');
+            let str = prompt('Write some Text:');
+            if(str == null){
+                out.value = `${noInput}`;
+            }
+            else{
+                out.innerHTML = `${str}`;
+            }
+        }
+
+        function safePromptBtnHandler(){
+            let out = document.getElementById('btn_out');
+            let str = prompt('Write some Text:');
+            if(str == null){
+                out.value = `${noInput}`;
+            }
+            else{
+                let sanitized = DOMPurify.sanitize(str);
+                out.innerHTML = `${sanitized}`;
+            }
+        }
+
+        function init(){
+            let abtn = document.getElementById('alert_btn');
+            abtn.addEventListener('click', ()=>{
+                alert('Alert!');
+            });
+
+            let cbtn = document.getElementById('confirm_btn');
+            cbtn.addEventListener('click', confirmBtnHandler);
+
+            let pbtn = document.getElementById('prompt_btn');
+            pbtn.addEventListener('click', promptBtnHandler);
+
+            let spbtn = document.getElementById('safe_prompt_btn');
+            spbtn.addEventListener('click', safePromptBtnHandler);
+        }
+
+        window.addEventListener('DOMContentLoaded', init);
+    </script>
 </head>
 <body>
-    
+    <button id="alert_btn">Alert</button>
+
+    <button id="confirm_btn">Confirm</button>
+
+    <button id="prompt_btn">Prompt</button>
+    <button id="safe_prompt_btn">Safer Prompt</button>
+
+    <hr>
+    <output id="btn_out" for="confirm_btn" value=""></output>
+
 </body>
