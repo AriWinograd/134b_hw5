@@ -1,4 +1,129 @@
 <!DOCTYPE html>
-<header>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>Method Test</title>
-</header>
+</head>
+<body>
+    <h1>Method Testing</h1>
+    <h2>oh boy HTTP sure is fun</h2>
+
+    <form name="my_form">
+        <label for="id_field">ID: </label>
+        <input name="id_field" id="id">
+        <br>
+        <label for="article_name">Article Name: </label>
+        <input name="article_name" id="article_name">
+        <br>
+        <label for="article_body">Article: </label>
+        <textarea name="article_body" id="body"></textarea>
+        <br>
+        <label for="date">Date: </label>
+        <input type="date" disabled="true" name="date" id="date">
+        <br>
+    </form>
+    <button id="postBtn">Post</button>
+        <button id="getBtn">Get</button>
+        <button id="putBtn">Put</button>
+        <button id="deleteBtn">Delete</button>
+        <br>
+
+        <output id="response" for="my_form"><ul id="list">&nbsp;</ul></output>
+
+    <script type="module">
+        window.addEventListener('DOMContentLoaded', init)
+
+        let postBtn = document.getElementById("postBtn");
+        let getBtn = document.getElementById("getBtn");
+        let putBtn = document.getElementById("putBtn");
+        let deleteBtn = document.getElementById("deleteBtn");
+
+        let id = document.getElementById("id");
+        let article_name = document.getElementById("article_name");
+        let body = document.getElementById("body");
+        let date = document.getElementById("date"); 
+        let list = document.getElementById("list");
+
+
+        function init(){
+            let date = document.getElementById("date");
+            date.valueAsDate = new Date();
+
+            postBtn.addEventListener('click', postHandler);
+            getBtn.addEventListener('click', getHandler);
+            putBtn.addEventListener('click', putHandler);
+            deleteBtn.addEventListener('click', deleteHandler);
+        }
+
+        async function handleResponse(xhr){
+            list.innerHTML = "&nbsp;";
+            console.log(xhr);
+            let json_response = xhr.responseText;
+            let obj_response = JSON.parse(json_response);
+            Object.keys(obj_response).forEach((key) =>{
+                let list_item = document.createElement("li");
+                list_item.innerHTML = `${key}: ${parse(obj_response[key])}`;
+                list.appendChild(list_item);
+            });
+        }
+
+        function parse(obj){
+            if(typeof obj == "string"){
+                return obj;
+            }
+            if(obj == null){
+                return "";
+            }
+            else{
+                let subhtml = "";
+                Object.keys(obj).forEach((key) =>{
+                    let sublist_item = ""
+                    sublist_item = `<li>${key}: ${obj[key]}</li>`;
+                    subhtml += sublist_item.toString();
+                });
+                console.log(subhtml);
+                return `<ul>${subhtml}</ul>`;
+            }
+        }
+
+        async function postHandler(){
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "https://httpbin.org/post", true);
+            xhr.onload = function() {handleResponse(xhr)};
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+            let payload = `id=${id.value}&article_name=${article_name.value}&body=${body.value}&date=${date.value}`;
+            xhr.send(payload);
+        }
+
+        async function getHandler(){
+            let xhr = new XMLHttpRequest();
+            let payload = `id=${id.value}&article_name=${article_name.value}&body=${body.value}&date=${date.value}`
+            xhr.open("GET", `https://httpbin.org/get?${payload}`, true);
+            xhr.onload = function() {handleResponse(xhr)};
+            xhr.setRequestHeader('Content-type', 'x-www-form-urlencoded');
+            xhr.send();
+        }
+
+        async function putHandler(){
+            let xhr = new XMLHttpRequest();
+            let payload = `id=${id.value}&article_name=${article_name.value}&body=${body.value}&date=${date.value}`
+            xhr.open("PUT", "https://httpbin.org/put", true);
+            xhr.onload = function() {handleResponse(xhr)};
+            xhr.setRequestHeader('Content-type', 'x-www-form-urlencoded');
+            xhr.send(payload);
+        }
+
+        async function deleteHandler(){
+            let xhr = new XMLHttpRequest();
+            let payload = `id=${id.value}&article_name=${article_name.value}&body=${body.value}&date=${date.value}`
+            xhr.open("DELETE", `https://httpbin.org/delete?${payload}`, true);
+            xhr.onload = function() {handleResponse(xhr)};
+            xhr.setRequestHeader('Content-type', 'x-www-form-urlencoded');
+            xhr.send();
+        }
+
+    </script>
+
+</body>

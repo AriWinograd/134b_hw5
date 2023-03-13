@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Web Component</title>
+</head>
+<body>
+    <h1>Click the Button</h1>
+    <h2>By the power of JavaScipt the number will incremement</h2>
+    <button-count></button-count>
+
+    <script type="module">
+        import {init} from "./ButtonCount.js";
+        window.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
